@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* Icon set - http://ionicons.com/ */
+        @import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css);
+        @import url(https://fonts.googleapis.com/css?family=Raleway:400,800);
+        
+        figure.snip1139 {
+            font-family: 'Raleway', Arial, sans-serif;
+            position: relative;
+            overflow: hidden;
+            margin: 10px;
+            min-width: 220px;
+            max-width: 310px;
+            width: 100%;
+            color: #333;
+            text-align: left;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+            border-radius: 8px;
+            display: none; /* Hide by default */
+        }
+
+        figure.snip1139.active {
+            display: block; /* Show active testimonial */
+        }
+
+        figure.snip1139 * {
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+            -webkit-transition: all 0.35s cubic-bezier(0.25, 0.5, 0.5, 0.9);
+            transition: all 0.35s cubic-bezier(0.25, 0.5, 0.5, 0.9);
+        }
+
+        figure.snip1139 img {
+            max-width: 100%;
+            vertical-align: middle;
+        }
+
+        figure.snip1139 blockquote {
+            position: relative;
+            background-color: #ffffff;
+            padding: 25px 50px 25px 50px;
+            font-size: 0.8em;
+            font-weight: 500;
+            text-align: left;
+            margin: 0;
+            line-height: 1.6em;
+            font-style: italic;
+        }
+
+        figure.snip1139 blockquote:before,
+        figure.snip1139 blockquote:after {
+            font-family: 'FontAwesome';
+            content: "\201C";
+            position: absolute;
+            font-size: 50px;
+            opacity: 0.3;
+            font-style: normal;
+        }
+
+        figure.snip1139 blockquote:before {
+            top: 25px;
+            left: 20px;
+        }
+
+        figure.snip1139 blockquote:after {
+            content: "\201D";
+            right: 20px;
+            bottom: 0;
+        }
+
+        figure.snip1139 .arrow {
+            top: 100%;
+            width: 0;
+            height: 0;
+            border-left: 0 solid transparent;
+            border-right: 25px solid transparent;
+            border-top: 25px solid #ffffff;
+            margin: 0;
+            position: absolute;
+        }
+
+        figure.snip1139 .author {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            padding: 5px 25px;
+            color: #000000;
+            background-color: #ffffff;
+            margin: 0;
+            text-transform: uppercase;
+        }
+
+        figure.snip1139 .author h5 {
+            opacity: 0.8;
+            margin: 0;
+            font-weight: 800;
+        }
+
+        figure.snip1139 .author h5 span {
+            font-weight: 400;
+            text-transform: none;
+            padding-left: 5px;
+        }
+
+        body {
+            background-color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-flow: wrap;
+            margin: 0;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+    <figure class="snip1139 active">
+        <blockquote>Sometimes I think the surest sign that intelligent life exists elsewhere in the universe is that none of it has tried to contact us.
+          <div class="arrow"></div>
+        </blockquote>
+        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample3.jpg" alt="sample3"/>
+        <div class="author">
+          <h5>Pelican Steve <span>- LittleThemes</span></h5>
+        </div>
+    </figure>
+    <figure class="snip1139">
+        <blockquote>I don't need to compromise on my principles, because they don't have the slightest bearing on what happens to me anyway.
+          <div class="arrow"></div>
+        </blockquote>
+        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample47.jpg" alt="sample47"/>
+        <div class="author">
+          <h5>Max Conversion<span>- LittleThemes</span></h5>
+        </div>
+    </figure>
+    <figure class="snip1139">
+        <blockquote>That's the problem with nature, something's always stinging you or oozing mucous all over you. Let's go and watch TV.
+          <div class="arrow"></div>
+        </blockquote>
+        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample17.jpg" alt="sample17"/>
+        <div class="author">
+          <h5>Eleanor Faint<span>- LittleThemes</span></h5>
+        </div>
+    </figure>
+
+    <script>
+        let currentIndex = 0;
+        const testimonials = document.querySelectorAll('figure.snip1139');
+        const totalTestimonials = testimonials.length;
+
+        function showNextTestimonial() {
+            testimonials[currentIndex].classList.remove('active');
+            currentIndex = (currentIndex + 1) % totalTestimonials;
+            testimonials[currentIndex].classList.add('active');
+        }
+
+        setInterval(showNextTestimonial, 3000); // Change testimonial every 3 seconds
+    </script>
+</body>
+</html>
