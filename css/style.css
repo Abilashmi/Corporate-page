@@ -509,3 +509,100 @@ body {
     margin: 0;
     height: 100%;
 }
+.ourproduct{
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.imagehover {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+  }
+
+  .articles-container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* 5 columns */
+    gap: 1.5rem;
+    width: 100%;
+    max-width: 1200px;
+    justify-content: center;
+    align-items: center;
+    
+  }
+
+  figure {
+    width: 100%;
+    aspect-ratio: 8 / 5;
+    --bg: hsl(330 80% calc(90% - (var(--hover) * 10%)));
+    --accent: hsl(280 80% 40%);
+    transition: background 0.2s;
+    background:
+      radial-gradient(circle at top left, var(--accent), transparent 75%),
+      var(--bg);
+    margin: 0;
+    position: relative;
+    overflow: hidden;
+    border-radius: 1.5rem;
+  }
+
+  figure:after {
+    content: "";
+    position: absolute;
+    width: 20%;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    bottom: 0%;
+    left: 0;
+    background: linear-gradient(-65deg, var(--bg) 50%, var(--accent) 50%);
+    filter: blur(25px);
+    transform:
+      translateX(calc(var(--hover) * 15%))
+      scale(calc(1 + (var(--hover) * 0.2)));
+    transition: transform 0.2s, background 0.2s;
+  }
+
+  .himg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    transform:
+      translateX(calc(var(--hover) * -10%))
+      scale(calc(1 + (var(--hover) * 0.2)));
+    transition: transform 0.2s;
+  }
+
+  article {
+    --hover: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  article:hover {
+    --hover: 1;
+  }
+
+  /* Responsive adjustments */
+  @media (max-width: 1200px) {
+    .articles-container {
+      grid-template-columns: repeat(3, 1fr); /* 3 columns on medium screens */
+    }
+  }
+
+  @media (max-width: 768px) {
+    .articles-container {
+      grid-template-columns: repeat(2, 1fr); /* 2 columns on small screens */
+    }
+  }
+
+  @media (max-width: 480px) {
+    .articles-container {
+      grid-template-columns: 1fr; /* 1 column on very small screens */
+    }
+  }
