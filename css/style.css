@@ -204,8 +204,9 @@ h6,
     height: 11px;
     bottom: 0;
     left: 0;
-    border-top: 1px solid #5A5A5A;
+    border-top: 1px solid #5A5A5A ;
     border-bottom: 1px solid #5A5A5A;
+   
 }
 
 .section-title::after {
@@ -400,8 +401,6 @@ h6,
     padding-right: 0;
     border-right: none;
 }
-
-
 figure.snip1139 {
     font-family: 'Poppins', sans-serif;
     position: relative;
@@ -416,11 +415,17 @@ figure.snip1139 {
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
     border-radius: 8px;
     display: none; /* Hide by default */
+    padding: 16px; /* Add padding */
+    transition: opacity 0.3s ease; /* Smooth transition */
 }
 
 figure.snip1139.active {
     display: block; /* Show active testimonial */
+    opacity: 1; /* Ensure opacity is set for visibility */
 }
+
+    
+
 
 figure.snip1139 * {
     -webkit-box-sizing: border-box;
@@ -923,3 +928,13 @@ button:hover {
     font-size: 1.2em;
     margin-bottom: 10px;
 }
+
+
+  
+  .centered-text {
+    width: 50%; /* This will keep the width at 50% */
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
