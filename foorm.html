@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sweet Corporate Form</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f8f9fa; /* Light gray background */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            padding: 20px; /* Add padding to avoid overflow */
+        }
+
+        .sweet-corporate-form {
+            max-width: 400px; /* Set a max width to prevent overflow */
+            width: 100%;
+            max-height: 80vh; /* Set maximum height for mobile */
+            overflow-y: auto; /* Enable vertical scrolling */
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+            background-color: #ffffff; /* White background */
+            position: relative;
+        }
+
+        .sweet-corporate-form h2 {
+            margin-bottom: 20px;
+            color: #333;
+            text-align: center;
+            font-size: 24px;
+        }
+
+        .input-container {
+            position: relative;
+            margin-bottom: 20px; /* Space between input fields */
+        }
+
+        .input-container label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #555;
+        }
+
+        .sweet-corporate-form input,
+        .sweet-corporate-form select {
+            width: 100%;
+            padding: 14px;
+            padding-left: 50px; /* Space for larger icon */
+            border: 2px solid #ced4da; /* Light border */
+            border-radius: 8px;
+            font-size: 16px;
+            transition: border-color 0.3s, box-shadow 0.3s;
+            box-sizing: border-box; /* Include padding in width */
+        }
+
+        .sweet-corporate-form input:focus,
+        .sweet-corporate-form select:focus {
+            border-color: #28a745; /* Green */
+            box-shadow: 0 0 8px rgba(40, 167, 69, 0.5); /* Subtle glow effect */
+            outline: none;
+        }
+
+        .sweet-corporate-form button {
+            background-color: #007bff; /* Blue button */
+            color: white;
+            padding: 14px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 16px;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .sweet-corporate-form button:hover {
+            background-color: #0056b3; /* Darker blue on hover */
+            transform: translateY(-2px); /* Slight lift effect */
+        }
+
+        .close-icon {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 24px; /* Larger size for the close icon */
+            color: black; /* Black color */
+            cursor: pointer;
+        }
+
+        .close-icon:hover {
+            color: #dc3545; /* Red color on hover */
+        }
+
+        .input-icon {
+            position: absolute;
+            left: 15px; /* Adjust for left padding */
+            top: 50%; /* Center vertically */
+            transform: translateY(-50%); /* Adjust for perfect centering */
+            font-size: 18px; /* Increased icon size */
+            color: #aaa; /* Light gray for icons */
+        }
+
+        @media (max-width: 480px) {
+            .sweet-corporate-form {
+                width: 90%; /* Make the form take 90% of the width on small screens */
+                padding: 20px; /* Adjust padding for smaller screens */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <form class="sweet-corporate-form">
+        <span class="close-icon" onclick="clearForm()">&times;</span> <!-- Close icon -->
+        <h2>Sweet Order Form</h2>
+
+        <div class="input-container">
+            <i class="fas fa-user input-icon"></i>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" placeholder="Enter your name" required>
+        </div>
+
+        <div class="input-container">
+            <i class="fas fa-envelope input-icon"></i>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email" required>
+        </div>
+
+        <div class="input-container">
+            <i class="fas fa-box input-icon"></i>
+            <label for="quantity">Quantity:</label>
+            <select id="quantity" name="quantity" required>
+                <option value="" disabled selected>Select Quantity</option>
+                <option value="20-30">20-30</option>
+                <option value="Upto 50">Upto 50</option>
+                <option value="Upto 100">Upto 100</option>
+                <option value="More than 100">More than 100</option>
+            </select>
+        </div>
+
+        <div class="input-container">
+            <i class="fas fa-calendar-alt input-icon"></i>
+            <label for="eventType">Event Type:</label>
+            <select id="eventType" name="eventType" required>
+                <option value="" disabled selected>Select Event Type</option>
+                <option value="celebration">Celebration</option>
+                <option value="festival">Festival</option>
+                <option value="corporate gifts">Corporate Gifts</option>
+                <option value="other">Other</option>
+            </select>
+        </div>
+
+        <div class="input-container">
+            <i class="fas fa-phone input-icon"></i>
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+        </div>
+
+        <div class="input-container">
+            <i class="fas fa-map-marker-alt input-icon"></i>
+            <label for="city">City:</label>
+            <input type="text" id="city" name="city" placeholder="Enter your city" required>
+        </div>
+
+        <button type="submit">Submit</button>
+    </form>
+
+    <script>
+        function clearForm() {
+            document.querySelector('.sweet-corporate-form').reset(); // Clears the form fields
+        }
+    </script>
+
+</body>
+</html>
